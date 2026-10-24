@@ -620,8 +620,8 @@ try {
       await page.keyboard.press('Enter');
       t.ok('adev: the button works from the keyboard', (await scheme(page)) === 'light');
       // slide.ng 2.1's `navPosition: top-*` puts the box of the bar at the top, where it would cover the button.
-      const reachable = () =>
-        page.evaluate(() => {
+      const reachable = (on = page) =>
+        on.evaluate(() => {
           const r = document.querySelector('.adev-scheme-button').getBoundingClientRect();
           const hit = document.elementFromPoint(r.x + r.width / 2, r.y + r.height / 2);
           return { top: r.top, free: Boolean(hit?.closest('.adev-scheme-button')) };
@@ -643,6 +643,23 @@ try {
         JSON.stringify(atTop),
       );
       await page.close();
+
+      // slide.ng 2.2: a viewer can put the bar at the top from the settings menu, over the headmatter.
+      const placed = await ctx.open('/3', sized, routeFonts);
+      await placed.locator('#nav-settings').click();
+      await placed.locator('#nav-position [data-nav-position=top-right]').click();
+      await placed.waitForFunction(() =>
+        document.querySelector('.nav-bar-box')?.classList.contains('top-0'),
+      );
+      await placed.keyboard.press('Escape');
+      await placed.waitForFunction(() => !document.querySelector('#settings-menu'));
+      const chosenTop = await reachable(placed);
+      t.ok(
+        'adev: with the bar put at the top in the settings menu the button moves and stays free',
+        chosenTop.free && chosenTop.top > 600,
+        JSON.stringify(chosenTop),
+      );
+      await placed.close();
 
       const night = await ctx.open('/3', sized, async (pg) => {
         await routeFonts(pg);
