@@ -87,6 +87,15 @@ The packages work with `@slide-ng/core` 1.x and 2.x. Use these only in a way tha
   is at the top, as `adev` does with its scheme button.
 - `languages` adds a language button to the bar. A theme's `locales/<lang>.json` can translate its `nav.language` and `language.menu`.
 
+### What slide.ng 2.2 adds for a theme
+
+- The settings menu has Nav Bar Position: a viewer can put the bar in any of the six places while the deck is open, over the headmatter. A theme
+  that moves something out of the bar's way must follow the bar itself (`.nav-bar-box.top-0`, as `adev` does with `body:has(...)`), not the
+  deck's `navPosition`. A theme's `locales/<lang>.json` can translate the new `settings.navPosition`, `settings.navPositionDefault` and
+  `settings.nav<Place>` strings.
+- A deck can keep its options in `slide-ng.config.yaml` next to `slides.md`. Its `themeConfig` and `fonts` are merged with the headmatter's
+  one level deep, so a theme sees the same values as before and needs no change.
+
 ## Rules
 
 - Original code under MIT can be ported, with credit in the package README and in `NOTICE`.
