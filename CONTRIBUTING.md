@@ -62,7 +62,7 @@ To add a layout to an existing theme, write `layouts/<layout>.ts` (copy a small 
 
 ### What slide.ng 2.0 adds for a theme
 
-The packages work with `@slide-ng/core` 1.x and 2.x. Use these only in a way that 1.x ignores, or keep a 1.x fallback.
+The packages work with `@slide-ng/core` 1.x, 2.x and 3.x. Use these only in a way that 1.x ignores, or keep a 1.x fallback.
 
 - `themeConfig`: settings a deck can change, as in Slidev. Give the defaults in `theme.json` (`"headmatter": { "themeConfig": { "primary": "#5d8392" } }`).
   Each text or number key becomes the CSS variable `--slidev-theme-<key>` on `<body>`, and the deck's `themeConfig` replaces it.
