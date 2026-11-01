@@ -4,6 +4,6 @@ import { Component } from '@angular/core';
 @Component({
   selector: 'bricks-blank',
   host: { class: 'slidev-layout blank' },
-  template: '<ng-content />',
+  templateUrl: './blank.html',
 })
 export class BricksBlank {}

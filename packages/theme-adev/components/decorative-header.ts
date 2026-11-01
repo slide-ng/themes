@@ -7,15 +7,7 @@ import { Component, booleanAttribute, input } from '@angular/core';
     '[class.adev-decorative-header-gradient]': 'gradient()',
     '[attr.title]': 'null',
   },
-  template: `
-    <div class="adev-decorative-header-content">
-      <div class="adev-decorative-header-title">{{ title() }}</div>
-      <ng-content />
-    </div>
-    @if (imgSrc()) {
-      <img class="adev-decorative-header-img" [attr.src]="imgSrc()" [attr.alt]="imgAlt()" />
-    }
-  `,
+  templateUrl: './decorative-header.html',
 })
 export class AdevDecorativeHeader {
   title = input('');

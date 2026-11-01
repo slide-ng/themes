@@ -7,8 +7,8 @@
     "packages/*"
   ],
   "scripts": {
-    "format": "prettier --write \"**/*.{json,md,yml}\" \"tests/**/*.mjs\" \"scripts/**/*.mjs\" \"packages/*/{layouts,components,styles}/**/*.{ts,css}\" \"examples/{layers,components}/**/*.ts\"",
-    "format:check": "prettier --check \"**/*.{json,md,yml}\" \"tests/**/*.mjs\" \"scripts/**/*.mjs\" \"packages/*/{layouts,components,styles}/**/*.{ts,css}\" \"examples/{layers,components}/**/*.ts\"",
+    "format": "prettier --write \"**/*.{json,md,yml}\" \"tests/**/*.mjs\" \"scripts/**/*.mjs\" \"packages/*/{layouts,components,layers,styles}/**/*.{ts,html,css}\" \"examples/{layers,components}/**/*.{ts,html}\"",
+    "format:check": "prettier --check \"**/*.{json,md,yml}\" \"tests/**/*.mjs\" \"scripts/**/*.mjs\" \"packages/*/{layouts,components,layers,styles}/**/*.{ts,html,css}\" \"examples/{layers,components}/**/*.{ts,html}\"",
     "test": "node --test tests/*.test.mjs && node tests/themes.mjs && node tests/adev-code.mjs && node tests/adev-alerts.mjs && node tests/adev-media.mjs && node tests/demo-switcher.mjs",
     "prepare": "node scripts/prepare.mjs"
   },

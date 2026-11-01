@@ -4,6 +4,6 @@ import { Component } from '@angular/core';
 @Component({
   selector: 'shibainu-quote',
   host: { class: 'slidev-layout quote dark shibainu-bg-quote' },
-  template: '<div class="my-auto w-full text-center"><ng-content /></div>',
+  templateUrl: './quote.html',
 })
 export class ShibainuQuote {}

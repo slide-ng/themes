@@ -6,7 +6,7 @@ import { Component, input, numberAttribute } from '@angular/core';
     class: 'adev-card-grid',
     '[style.grid-template-columns]': '"repeat(" + cols() + ", 1fr)"',
   },
-  template: '<ng-content />',
+  templateUrl: './card-grid.html',
 })
 export class AdevCardGrid {
   cols = input(2, { transform: numberAttribute });

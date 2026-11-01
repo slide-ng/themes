@@ -4,6 +4,6 @@ import { Component } from '@angular/core';
 @Component({
   selector: 'bricks-default',
   host: { class: 'slidev-layout default bricks-bg-default' },
-  template: '<ng-content />',
+  templateUrl: './default.html',
 })
 export class BricksDefault {}

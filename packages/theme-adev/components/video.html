@@ -1,0 +1,32 @@
+<div class="adev-video-frame">
+  @if (embed(); as url) {
+    @if (playing()) {
+      <iframe
+        class="adev-video-iframe"
+        [src]="url"
+        [title]="title()"
+        loading="lazy"
+        referrerpolicy="strict-origin-when-cross-origin"
+        allow="encrypted-media; picture-in-picture; fullscreen"
+      ></iframe>
+    } @else {
+      <button
+        type="button"
+        class="adev-video-poster"
+        [attr.aria-label]="'Play video: ' + title()"
+        [disabled]="!interactive"
+        (click)="playing.set(true)"
+      >
+        <span class="adev-video-title">{{ title() }}</span>
+        <svg class="adev-video-play" viewBox="0 0 68 48" aria-hidden="true">
+          <rect width="68" height="48" rx="12" />
+          <path d="M27 13 47 24 27 35Z" />
+        </svg>
+      </button>
+    }
+  } @else {
+    <div class="adev-video-poster adev-video-invalid">
+      <span class="adev-video-title">{{ title() }}</span>
+    </div>
+  }
+</div>

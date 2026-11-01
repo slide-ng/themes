@@ -4,25 +4,7 @@ import { COPIED_ICON, COPY_ICON, copyCode } from './code-copy';
 @Component({
   selector: 'adev-code-card',
   host: { class: 'adev-code-card' },
-  template: `
-    <header class="adev-code-card-header">
-      <span class="adev-code-card-title">{{ title() }}</span>
-      @if (label()) {
-        <span class="adev-code-card-label">{{ label() }}</span>
-      }
-      <button
-        type="button"
-        class="adev-copy"
-        [attr.aria-label]="copied() ? 'Copied' : 'Copy code'"
-        (click)="copy()"
-      >
-        <svg viewBox="0 0 24 24" aria-hidden="true">
-          <path [attr.d]="copied() ? copiedIcon : copyIcon" />
-        </svg>
-      </button>
-    </header>
-    <div class="adev-code-card-body"><ng-content /></div>
-  `,
+  templateUrl: './code-card.html',
 })
 export class AdevCodeCard {
   title = input('');

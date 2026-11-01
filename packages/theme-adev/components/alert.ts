@@ -30,17 +30,7 @@ type Kind = keyof typeof KINDS;
 @Component({
   selector: 'adev-alert',
   host: { class: 'adev-alert', '[class]': '"adev-alert-" + kind()', '[attr.title]': 'null' },
-  template: `
-    <svg class="adev-alert-icon" viewBox="0 0 24 24" aria-hidden="true">
-      <path [attr.d]="data()[1]" fill-rule="evenodd" />
-    </svg>
-    <div class="adev-alert-body">
-      @if (!bare()) {
-        <header class="adev-alert-label">{{ title() || data()[0] }}</header>
-      }
-      <ng-content />
-    </div>
-  `,
+  templateUrl: './alert.html',
 })
 export class AdevAlert {
   kind = input<Kind>('note');

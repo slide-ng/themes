@@ -27,16 +27,7 @@ const MARKS: Record<string, string> = {
     '[class.adev-api-label-full]': 'full()',
     '[attr.title]': 'null',
   },
-  template: `
-    @if (full()) {
-      <span class="adev-api-label-text">{{ text() }}</span>
-      @if (version()) {
-        <span class="adev-api-label-version">{{ version() }}</span>
-      }
-    } @else {
-      <span class="adev-api-label-mark" [attr.aria-label]="text()">{{ mark() }}</span>
-    }
-  `,
+  templateUrl: './api-label.html',
 })
 export class AdevApiLabel {
   kind = input('class');

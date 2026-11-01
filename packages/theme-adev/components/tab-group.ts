@@ -18,33 +18,7 @@ import { ADEV_TABS_HOST, AdevTab } from './tab';
   selector: 'adev-tab-group',
   host: { class: 'adev-tabs', '[class.adev-tabs-stacked]': 'stacked' },
   providers: [{ provide: ADEV_TABS_HOST, useExisting: AdevTabGroup }],
-  template: `
-    @if (!stacked) {
-      <div
-        class="adev-tab-list"
-        role="tablist"
-        [attr.aria-label]="label() || null"
-        (keydown)="onKey($event)"
-      >
-        @for (tab of tabs(); track tab.tabId; let i = $index) {
-          <button
-            type="button"
-            class="adev-tab"
-            role="tab"
-            [id]="tab.tabId"
-            [class.adev-tab-active]="i === selected()"
-            [attr.aria-selected]="i === selected()"
-            [attr.aria-controls]="tab.panelId"
-            [attr.tabindex]="i === selected() ? 0 : -1"
-            (click)="select(i)"
-          >
-            {{ tab.label() }}
-          </button>
-        }
-      </div>
-    }
-    <div class="adev-tab-panels"><ng-content /></div>
-  `,
+  templateUrl: './tab-group.html',
 })
 export class AdevTabGroup implements OnInit, OnDestroy {
   label = input('');

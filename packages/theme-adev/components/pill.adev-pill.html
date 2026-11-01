@@ -1,0 +1,5 @@
+@if (href()) {
+  <a class="adev-pill-link" [attr.href]="href()">{{ title() }}<ng-content /></a>
+} @else {
+  <span class="adev-pill-text">{{ title() }}<ng-content /></span>
+}

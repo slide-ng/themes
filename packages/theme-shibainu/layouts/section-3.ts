@@ -4,6 +4,6 @@ import { Component } from '@angular/core';
 @Component({
   selector: 'shibainu-section-3',
   host: { class: 'slidev-layout section-3 dark grid shibainu-bg-section-3' },
-  template: '<div class="my-auto w-full text-center"><ng-content /></div>',
+  templateUrl: './section-3.html',
 })
 export class ShibainuSection3 {}

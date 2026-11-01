@@ -4,6 +4,6 @@ import { Component } from '@angular/core';
 @Component({
   selector: 'shibainu-center',
   host: { class: 'slidev-layout center grid shibainu-bg-center' },
-  template: '<div class="m-auto w-[60%] text-center"><ng-content /></div>',
+  templateUrl: './center.html',
 })
 export class ShibainuCenter {}

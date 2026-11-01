@@ -32,7 +32,7 @@ for (const name of names) {
     it('has the package fields slide.ng and npm need', () => {
       assert.equal(pkg.name, `@slide-ng/theme-${name}`);
       assert.equal(pkg.license, 'MIT');
-      assert.equal(pkg.peerDependencies['@slide-ng/core'], '^1.0.0 || ^2.0.0');
+      assert.equal(pkg.peerDependencies['@slide-ng/core'], '^1.0.0 || ^2.0.0 || ^3.0.0');
       assert.deepEqual(pkg.keywords, ['slide-ng-theme', 'slide-ng']);
       assert.ok(pkg.files.includes('layouts') && pkg.files.includes('theme.json'));
       assert.ok(pkg.files.every((f) => !f.includes('..')));
@@ -65,9 +65,9 @@ for (const name of names) {
       for (const layout of layouts.filter((l) => l !== 'default'))
         assert.match(deck, new RegExp(`^layout: ${layout}$`, 'm'), `layout ${layout}`);
     });
-    it('copies no CC BY-NC-SA asset: only code, styles and json are packed', () => {
+    it('copies no CC BY-NC-SA asset: only code, templates, styles and json are packed', () => {
       const files = readdirSync(dir, { recursive: true }).filter((f) => /\.[a-z0-9]+$/.test(f));
-      for (const f of files) assert.match(f, /\.(ts|css|json|md)$/, f);
+      for (const f of files) assert.match(f, /\.(ts|html|css|json|md)$/, f);
     });
   });
 }

@@ -1,0 +1,4 @@
+<ng-content />
+<div class="bricks-items-grid" [style.grid-template-columns]="'repeat(' + cols() + ', 1fr)'">
+  <ng-content select="[items]" />
+</div>

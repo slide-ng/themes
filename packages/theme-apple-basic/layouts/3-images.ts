@@ -5,13 +5,7 @@ import { background } from 'slide-ng/layouts/background';
 @Component({
   selector: 'apple-three-images',
   host: { class: 'grid grid-cols-2 w-full h-full gap-x-7' },
-  template: `
-    <div class="ms-14 my-14" [style]="left()"></div>
-    <div class="grid grid-rows-2 w-full h-full gap-y-7">
-      <div class="me-14 mt-14" [style]="topRight()"></div>
-      <div class="me-14 mb-14" [style]="bottomRight()"></div>
-    </div>
-  `,
+  templateUrl: './3-images.html',
 })
 export class AppleThreeImages {
   imageLeft = input('');

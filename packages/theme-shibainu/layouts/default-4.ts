@@ -4,6 +4,6 @@ import { Component } from '@angular/core';
 @Component({
   selector: 'shibainu-default-4',
   host: { class: 'slidev-layout default-4 dark shibainu-bg-4' },
-  template: '<div class="pl-[20%] py-[2%]"><ng-content /></div>',
+  templateUrl: './default-4.html',
 })
 export class ShibainuDefault4 {}

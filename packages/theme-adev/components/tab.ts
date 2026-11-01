@@ -18,12 +18,7 @@ let uid = 0;
     '[attr.tabindex]': 'host?.stacked ? null : 0',
     '[hidden]': '!shown()',
   },
-  template: `
-    @if (host?.stacked) {
-      <div class="adev-tab-print-label">{{ label() }}</div>
-    }
-    <ng-content />
-  `,
+  templateUrl: './tab.html',
 })
 export class AdevTab {
   label = input('');

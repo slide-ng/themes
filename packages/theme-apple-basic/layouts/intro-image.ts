@@ -5,7 +5,7 @@ import { background } from 'slide-ng/layouts/background';
 @Component({
   selector: 'apple-intro-image',
   host: { class: 'slidev-layout w-full h-full intro-image', '[style]': 'style()' },
-  template: '<ng-content />',
+  templateUrl: './intro-image.html',
 })
 export class AppleIntroImage {
   image = input('');

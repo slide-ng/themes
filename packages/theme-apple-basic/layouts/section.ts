@@ -4,6 +4,6 @@ import { Component } from '@angular/core';
 @Component({
   selector: 'apple-section',
   host: { class: 'slidev-layout h-full grid section' },
-  template: '<div class="my-auto"><ng-content /></div>',
+  templateUrl: './section.html',
 })
 export class AppleSection {}
