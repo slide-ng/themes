@@ -4,6 +4,6 @@ import { Component } from '@angular/core';
 @Component({
   selector: 'apple-quote',
   host: { class: 'slidev-layout h-full grid quote' },
-  template: '<div class="my-auto"><ng-content /></div>',
+  templateUrl: './quote.html',
 })
 export class AppleQuote {}

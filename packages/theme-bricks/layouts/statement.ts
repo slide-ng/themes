@@ -4,6 +4,6 @@ import { Component } from '@angular/core';
 @Component({
   selector: 'bricks-statement',
   host: { class: 'slidev-layout statement bricks-bg-statement' },
-  template: '<div class="my-auto"><ng-content /></div>',
+  templateUrl: './statement.html',
 })
 export class BricksStatement {}

@@ -1,0 +1,25 @@
+@if (!stacked) {
+  <div
+    class="adev-tab-list"
+    role="tablist"
+    [attr.aria-label]="label() || null"
+    (keydown)="onKey($event)"
+  >
+    @for (tab of tabs(); track tab.tabId; let i = $index) {
+      <button
+        type="button"
+        class="adev-tab"
+        role="tab"
+        [id]="tab.tabId"
+        [class.adev-tab-active]="i === selected()"
+        [attr.aria-selected]="i === selected()"
+        [attr.aria-controls]="tab.panelId"
+        [attr.tabindex]="i === selected() ? 0 : -1"
+        (click)="select(i)"
+      >
+        {{ tab.label() }}
+      </button>
+    }
+  </div>
+}
+<div class="adev-tab-panels"><ng-content /></div>

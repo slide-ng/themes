@@ -4,6 +4,6 @@ import { Component } from '@angular/core';
 @Component({
   selector: 'apple-statement',
   host: { class: 'slidev-layout center h-full grid place-content-center statement' },
-  template: '<div class="my-auto"><ng-content /></div>',
+  templateUrl: './statement.html',
 })
 export class AppleStatement {}

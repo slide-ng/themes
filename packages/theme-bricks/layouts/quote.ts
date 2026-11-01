@@ -4,6 +4,6 @@ import { Component } from '@angular/core';
 @Component({
   selector: 'bricks-quote',
   host: { class: 'slidev-layout quote bricks-bg-quote' },
-  template: '<div class="my-auto"><ng-content /></div>',
+  templateUrl: './quote.html',
 })
 export class BricksQuote {}

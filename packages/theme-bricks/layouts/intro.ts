@@ -4,11 +4,6 @@ import { Component } from '@angular/core';
 @Component({
   selector: 'bricks-intro',
   host: { class: 'slidev-layout intro bricks-bg-intro' },
-  template: `
-    <div><ng-content select="[left]" /></div>
-    <div class="h-full grid">
-      <div class="my-auto"><ng-content /></div>
-    </div>
-  `,
+  templateUrl: './intro.html',
 })
 export class BricksIntro {}

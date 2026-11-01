@@ -4,12 +4,7 @@ import { Component, input, numberAttribute } from '@angular/core';
 @Component({
   selector: 'bricks-items',
   host: { class: 'slidev-layout items bricks-bg-items' },
-  template: `
-    <ng-content />
-    <div class="bricks-items-grid" [style.grid-template-columns]="'repeat(' + cols() + ', 1fr)'">
-      <ng-content select="[items]" />
-    </div>
-  `,
+  templateUrl: './items.html',
 })
 export class BricksItems {
   cols = input(4, { transform: numberAttribute });

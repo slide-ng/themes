@@ -8,7 +8,7 @@ import { background } from 'slide-ng/layouts/background';
     '[class.adev-hero]': '!background()',
     '[style]': 'style()',
   },
-  template: '<div class="my-auto w-full"><ng-content /></div>',
+  templateUrl: './cover.html',
 })
 export class AdevCover {
   background = input('');

@@ -4,6 +4,6 @@ import { Component } from '@angular/core';
 @Component({
   selector: 'apple-bullets',
   host: { class: 'slidev-layout h-full grid bullets' },
-  template: '<div class="pt-18"><ng-content /></div>',
+  templateUrl: './bullets.html',
 })
 export class AppleBullets {}

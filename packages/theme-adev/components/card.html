@@ -1,0 +1,7 @@
+@if (label()) {
+  <span class="adev-card-label">{{ label() }}</span>
+}
+@if (title()) {
+  <h3 class="adev-card-title">{{ title() }}</h3>
+}
+<div class="adev-card-body"><ng-content /></div>

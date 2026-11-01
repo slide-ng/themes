@@ -10,7 +10,7 @@ import { background } from 'slide-ng/layouts/background';
     '[class.seriph-cover-plain]': '!background()',
     '[style]': 'style()',
   },
-  template: '<div class="my-auto w-full"><ng-content /></div>',
+  templateUrl: './cover.html',
 })
 export class SeriphCover {
   background = input('');

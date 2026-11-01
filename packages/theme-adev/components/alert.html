@@ -1,0 +1,9 @@
+<svg class="adev-alert-icon" viewBox="0 0 24 24" aria-hidden="true">
+  <path [attr.d]="data()[1]" fill-rule="evenodd" />
+</svg>
+<div class="adev-alert-body">
+  @if (!bare()) {
+    <header class="adev-alert-label">{{ title() || data()[0] }}</header>
+  }
+  <ng-content />
+</div>

@@ -5,10 +5,7 @@ import { background } from 'slide-ng/layouts/background';
 @Component({
   selector: 'apple-image-right',
   host: { class: 'grid grid-cols-2 w-full h-full' },
-  template: `
-    <div class="slidev-layout default image-right" [class]="contentClass()"><ng-content /></div>
-    <div class="apple-photo" [style]="style()"></div>
-  `,
+  templateUrl: './image-right.html',
 })
 export class AppleImageRight {
   image = input('');
