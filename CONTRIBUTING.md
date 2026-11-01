@@ -96,6 +96,18 @@ The packages work with `@slide-ng/core` 1.x and 2.x. Use these only in a way tha
 - A deck can keep its options in `slide-ng.config.yaml` next to `slides.md`. Its `themeConfig` and `fonts` are merged with the headmatter's
   one level deep, so a theme sees the same values as before and needs no change.
 
+### What slide.ng 3.0 adds for a theme
+
+- The deck browser: `b` or a globe button in the bar opens a browser with tabs over the current slide, and links to other sites on a slide open
+  in it. It is a fixed layer above the slide with its own look (light or dark, like the deck or chosen by the viewer), so a theme's styles and
+  `themeConfig` do not reach it and a theme needs no change. Do not put a theme's own fixed element above slide.ng's dialogs: it would show over
+  the browser too. A theme's `locales/<lang>.json` can translate the new `nav.browserShow`, `nav.browserHide`, `presenter.browserOpen` and
+  `browser.*` strings.
+- The bar has one more button (the globe), unless the deck sets `browser: false`.
+- The navigation bar can be dragged by a grip at its start to one of the six places of `navPosition`. A drop lands on the same places as the
+  settings menu, so a theme that follows the bar itself (`.nav-bar-box.top-0`, as `adev` does) needs no change. A theme's `locales/<lang>.json`
+  can translate the new `nav.move`, `menu.barShow` and `menu.barReset` strings.
+
 ## Rules
 
 - Original code under MIT can be ported, with credit in the package README and in `NOTICE`.
