@@ -55,7 +55,7 @@ jobs:
           done
           cp pages/index.html dist-pages/index.html
 
-      - uses: actions/upload-pages-artifact@v3
+      - uses: actions/upload-pages-artifact@v5
         with:
           path: dist-pages
 
